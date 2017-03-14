@@ -1,0 +1,374 @@
+@import bourbon
+@import fonts
+@import vars
+
+body
+	font-size: 16px // по умолчанию в body должно быть так для верного вычислерния em
+	min-width: 320px
+	position: relative
+	line-height: 1.6
+	font-family: "OpenSansRegular", sans-serif
+	overflow-x: hidden
+	color: #222
+
+h1, h2, h3, h4, h5, h6
+	font-family: "OpenSansLight", sans-serif
+	font-weight: normal
+
+h1 
+	font-size: em(42)
+	line-height: em(19) // Line-height можно же указать как a / b, где а - значение высоты строки из фотошопа, а b - размер шрифта в px. Чтоб на глаз не вымерять.﻿
+	// letter-spacing: 0.23px
+
+.ishome
+	h1
+		margin-top: 0
+
+h2 
+	font-size: em(32)
+
+h3, h4 
+	font-family: "OpenSansSemiBold", sans-serif
+	font-size: em(17)
+	text-transform: uppercase
+
+h4
+	font-size: em(13)
+
+a 
+	color: $accent
+	outline: none !important
+
+.hidden
+	display: none
+
+.text-center
+	text-align: center
+
+.main-head
+	background-image: url(../img/bg_top.jpg)
+	background-size: cover
+	background-position: top center
+	min-height: 100vh // на всю высоту экрана
+	overflow: hidden // чтобы главная картинка не вывалилвалась вправо
+
+.mnu-line
+	padding-top: 48px
+
+.logo
+	display: block
+	width: 100px
+	img
+		width: 100% // растягиваем логотип на всю ширину дива
+
+nav
+	ul
+		list-style-type: none
+		padding: 0
+		margin: 0
+	li
+		display: inline-block
+
+.main-mnu
+	text-align: center
+	font-size: em(13)
+	> ul
+		> li
+			> a
+				display: block
+				padding: 15px 25px
+				color: #7e91a4
+				&:hover
+					+mt(0.5s) // mixin - см. _vars.sass
+					color: $blue
+			&.active
+				a 
+					color: $blue
+					text-decoration: underline
+
+.phone
+	text-align: right
+	.phone-wrap
+		color: $blue
+		font-family: "exo2bold", sans-serif
+		font-size: em(20)
+		line-height: em(13)
+		.fa 
+			font-size: em(20)
+			position: relative
+			top: 2px
+			margin-right: 4px
+	.callback
+		color: #7e91a4
+		font-family: "OpenSansSemiBold", sans-serif
+		display: inline-block
+		font-size: em(13)
+		line-height: em(22)
+		border-bottom: 1px dashed #7e91a4
+		+mt(0.2s) // mixin - см. _vars.sass 
+		&:hover
+			text-decoration: none
+			border-color: transparent
+		&:focus
+			text-decoration: none // чтобы убрать подчеркивание после клика на ссылке
+
+ul.home-list
+	text-align: left
+	list-style-type: none
+	padding: 0
+	margin: 0
+	color: $blue
+	li
+		display: block 
+		text-transform: uppercase
+		font-size: em(17)
+		line-height: em(29)
+		font-family: "OpenSansSemiBold", sans-serif
+
+.header-content
+	padding: 11.2% 0 5%
+	ul
+		padding-top: 15px
+	.button
+		margin-top: 60px
+	.img-responsive
+		 padding-top: 10px
+
+.button
+	display: inline-block
+	border: none
+	background-color: $btn
+	color: #fff
+	text-transform: uppercase
+	font-size: em(14)
+	letter-spacing: 2px
+	padding: 15px 32px 11px
+	border-radius: 3px
+	box-shadow: 0 3px 0 #0e9c4b
+	text-align: center
+	+mt(0.15s)
+	&:hover, &:focus
+		color: #fff
+		text-decoration: none
+		outline: none // чтобы убрать орело вокруг активной кнопки
+	&:hover
+		background-color: #18CB65
+	&:active
+		background-color: #0e9c4b
+		transform: translateY(1px)
+		box-shadow: 0 2px 0 #0e9c4b
+
+.button-accent
+	background-color: transparent
+	border: 1px solid $accent
+	color: $accent
+	box-shadow: 0 2px 0 $accent
+	padding: 14px 32px 11px;
+	font-family: "OpenSansSemiBold", sans-serif
+	&:hover
+		background-color: $accent
+		border: 1px solid darken($accent, 6%)
+	&:focus
+		color: $accent
+	&:active
+		background-color: #cd9b25
+		box-shadow: 0 1px 0 #cd9b25
+		border: 1px solid #cd9b25
+
+.button-small-accent
+	+mt(.25s)
+	color: #666
+	font-size: em(13)
+	background-color: #e8e8e8
+	box-shadow: 0 3px 0 #d0d0d0
+	padding: 12px 26px 8px
+	&:hover
+		background-color: $accent 
+		box-shadow: 0 3px 0 darken($accent, 6%)
+	&:active
+		background-color: darken($accent, 6%)
+		box-shadow: 0 2px 0 darken($accent, 6%)
+
+
+
+
+// Mouse animate icon
+
+.mouse-icon
+	border: 2px solid $blue
+	border-radius: 16px
+	height: 40px
+	width: 24px
+	display: inline-block
+	z-index: 10
+	opacity: 0.7
+	cursor: pointer
+	.wheel
+		animation-name: drop
+		animation-duration: 1s
+		animation-timing-function: linear
+		animation-delay: 0s
+		animation-iteration-count: infinite
+		animation-play-state: running
+		position: relative
+		border-radius: 10px
+		background: $blue
+		width: 2px
+		height: 6px
+		top: 4px
+		margin-left: auto
+		margin-right: auto
+
+@-webkit-keyframes drop
+	0%
+		top: 5px
+		opacity: 0
+
+	30%
+		top: 10px
+		opacity: 1
+
+	100%
+		top: 25px
+		opacity: 0
+
+
+@keyframes drop
+	0%
+		top: 5px
+		opacity: 0
+
+	30%
+		top: 10px
+		opacity: 1
+
+	100%
+		top: 25px
+		opacity: 0
+
+.mw-wrapper
+	text-align: center
+	padding: 40px 0
+
+// Toggle Mnu
+
+.toggle-mnu 
+	display: block
+	width: 28px
+	height: 28px
+	margin-top: 14px
+
+	span:after, span:before 
+		content: ""
+		position: absolute
+		left: 0
+		top: 9px
+
+	span:after
+		top: 18px
+
+	span 
+		position: relative
+		display: block
+
+	span, span:after, span:before
+		width: 100%
+		height: 2px
+		background-color: $blue
+		transition: all 0.3s
+		backface-visibility: hidden
+		border-radius: 2px
+
+
+	&.on span 
+		background-color: transparent
+
+	&.on span:before 
+		transform: rotate(45deg) translate(-1px, 0px)
+
+	&.on span:after 
+		transform: rotate(-45deg) translate(6px, -7px)
+
+// --
+
+.toggle-mnu
+	position: absolute
+	top: 0
+	right: 15px
+
+.hidden-mnu
+	background-color: $blue
+	display: none
+	position: relative
+	top: 20px
+	text-transform: uppercase
+	> ul
+		padding: 20px 0
+		> li
+			display: block
+			&.active
+				a 
+					color: $accent
+					text-decoration: underline
+
+			> a
+				&:hover
+					color: #fff
+					background-color: $accent
+					text-decoration: none
+			&.active
+				a:hover
+					text-decoration: underline
+
+.s-wide
+	padding: 80px 0
+	h2
+		text-align: center
+		margin-top: 0
+
+.s-dark
+	background-color: $blue
+	color: #fff
+
+.s-adv
+	padding: 55px 0 10px
+
+.s-adv-item
+	font-family: "OpenSansLight", sans-serif
+	font-size: em(15)
+	color: #c0cdda
+	line-height: em(21)
+	padding-bottom: 40px
+	min-height: 117px // чтобы не было проблем с флоатами
+	h3
+		margin: 0
+		font-family: "exo2bold", sans-serif
+		font-size: em(20)
+		text-transform: uppercase
+		color: #dde9f3
+		letter-spacing: 1px
+		span
+			color: $accent
+			font-size: em(20)
+		i
+			font-size: em(29) // для фиксирования высоты строки
+	p
+		margin: 15px 0 0
+
+.table
+	display: table
+	width: 100%
+.tr
+	display: table-row
+.td
+	display: table-cell
+	vertical-align: middle
+	text-align: center
+
+
+
+
+
+
+
+		

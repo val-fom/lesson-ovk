@@ -1,0 +1,132 @@
+@import bourbon
+
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1199px)
+		// .header-content
+		// 	.img-responsive
+		// 		max-width: 100%
+		.main-mnu
+			> ul
+				> li
+					> a
+						padding: 15px 15px
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 991px)
+	.ishome h1
+		font-size: em(34)
+	.phone
+		margin-right: 45px
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px)
+	
+	/*Disable Animation on Mobile Devices*/
+	.animated
+		/*CSS transitions*/
+		-o-transition-property: none !important
+		-moz-transition-property: none !important
+		-ms-transition-property: none !important
+		-webkit-transition-property: none !important
+		transition-property: none !important
+		/*CSS transforms*/
+		-o-transform: none !important
+		-moz-transform: none !important
+		-ms-transform: none !important
+		-webkit-transform: none !important
+		transform: none !important
+		/*CSS animations*/
+		-webkit-animation: none !important
+		-moz-animation: none !important
+		-o-animation: none !important
+		-ms-animation: none !important
+		animation: none !important
+
+	.mnu-line
+		text-align: center
+		.logo
+			display: inline-block
+		.phone
+			text-align: center
+			margin-top: 20px
+			margin-right: 0
+		.toggle-mnu
+			top: -50px
+
+	.s-profile
+		h2
+			margin-top: 30px
+
+	.ishome
+		h2
+			font-size: em(28)
+
+	// .s-profile
+	// 	.button
+	// 		width: auto
+		
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	.ishome h1
+		font-size: em(30)
+		margin-top: 30px
+	.home-list li
+		font-size: em(16)
+	.hidden-mnu
+		font-size: em(15)
+		text-transform: uppercase
+	.header-content
+		text-align: center
+	
+	
+	.carousel-part
+		.carousel-part-item
+			a
+				height: 50px
+		.owl-nav
+			> div
+				top: 36px
+	// .s-profile
+	// 	.button
+	// 		padding-left: 5px
+	// 		padding-right: 5px
+	// 		letter-spacing: 1px
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+
